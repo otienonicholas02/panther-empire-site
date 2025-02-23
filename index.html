@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panther Empire - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            color: rgb(153, 101, 21); /* Gold Brown Text */
+        }
+        
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        header {
+            background-color: rgba(153, 101, 21, 0.8); /* Gold Brown with transparency */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(51, 51, 51, 0.8);
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px; /* Increased font size */
+        }
+        nav a:hover {
+            background: rgba(85, 85, 85, 0.8);
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay loop muted playsinline class="video-background">
+        <source src="video/panther.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <header>
+        <h1>Panther Empire</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="content">
+        <h2>Welcome to Panther Empire</h2>
+        <p>Panther Empire Limited is the leading logistics company in Kenya, providing top-tier transportation and supply chain solutions. We specialize in serving both the commercial and agricultural sectors, ensuring seamless and efficient delivery services tailored to meet the diverse needs of businesses across the country.</p>
+        <h3>Our Services</h3>
+        <ul>
+            <li>Transportation - Reliable and timely delivery of goods.</li>
+            <li>Warehousing - Secure storage solutions for businesses.</li>
+            <li>Supply Chain Management - End-to-end logistics optimization.</li>
+        </ul>
+    </div>
+    <footer>
+        <p>&copy; 2025 Panther Empire. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

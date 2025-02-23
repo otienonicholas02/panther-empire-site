@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panther Empire - Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            color: rgb(153, 101, 21); /* Gold Brown Text */
+        }
+        
+        header {
+            background-color: rgba(153, 101, 21, 0.8); /* Gold Brown with transparency */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(51, 51, 51, 0.8);
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px; /* Increased font size */
+        }
+        nav a:hover, nav a.active {
+            background: rgba(85, 85, 85, 0.8);
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .service {
+            background: rgba(153, 101, 21, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentLocation = window.location.href;
+            const navLinks = document.querySelectorAll("nav a");
+            navLinks.forEach(link => {
+                if (link.href === currentLocation) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Panther Empire - Our Services</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="content">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Transportation</h3>
+                <p>Reliable and timely delivery of goods across Kenya, ensuring efficiency and safety.</p>
+            </div>
+            <div class="service">
+                <h3>Warehousing</h3>
+                <p>Secure storage solutions for businesses, providing organized and safe inventory management.</p>
+            </div>
+            <div class="service">
+                <h3>Supply Chain Management</h3>
+                <p>End-to-end logistics optimization, streamlining operations for maximum productivity.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Panther Empire. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

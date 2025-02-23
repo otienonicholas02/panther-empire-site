@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panther Empire - About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: rgb(153, 101, 21); /* Gold Brown Text */
+        }
+        
+        header {
+            background-color: rgba(153, 101, 21, 0.8); /* Gold Brown with transparency */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(51, 51, 51, 0.8);
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px; /* Increased font size */
+        }
+        nav a:hover, nav a.active {
+            background: rgba(85, 85, 85, 0.8);
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+        }
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 50px; /* Increased space between images */
+            padding: 20px;
+        }
+        .team-member {
+            text-align: center;
+            max-width: 250px; /* Reduced image size */
+        }
+        .team-member img {
+            width: 80%; /* Reduced image size */
+            border-radius: 50%; /* Making images circular */
+        }
+        footer {
+            background: rgba(51, 51, 51, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentLocation = window.location.href;
+            const navLinks = document.querySelectorAll("nav a");
+            navLinks.forEach(link => {
+                if (link.href === currentLocation) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Panther Empire - About Us</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="content">
+        <h2>About Panther Empire</h2>
+        <p>Panther Empire Limited is the leading logistics company in Kenya, serving both the commercial and agricultural sectors. Our expertise in transportation and warehousing ensures that businesses operate efficiently with reliable supply chain solutions.</p>
+        
+        <h2>Our Leadership</h2>
+        <div class="team">
+            <div class="team-member">
+                <img src="images/tony.png" alt="Tony - CEO">
+                <h3>Tony - CEO</h3>
+                <p>Tony is a visionary leader with years of experience in logistics and transportation, driving Panther Empire towards excellence.</p>
+            </div>
+            <div class="team-member">
+                <img src="images/clemo.png" alt="Clemo - Co-Founder">
+                <h3>Clemo - Co-Founder</h3>
+                <p>Clemo has played a crucial role in shaping the company's logistics strategies, ensuring seamless operations across Kenya.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Panther Empire Limited. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
