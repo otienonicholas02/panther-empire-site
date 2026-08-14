@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panther Empire - Services</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* CONTENT */
+.content {
+    max-width: 1300px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: rgba(120, 79, 16, 0.95);
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.intro {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 40px auto;
+    font-size: 20px;
+    color: black;
+}
+
+/* SERVICES */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.service-box {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 165, 74, 0.1);
+    transition: 0.3s;
+}
+
+.service-box:hover {
+    transform: translateY(-8px);
+    border-color: #996515;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.service-box h3 {
+    color: rgba(120, 79, 16, 0.95);
+    margin-bottom: 12px;
+    font-size: 26px;
+}
+
+.service-box p {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.service-box ul {
+    padding-left: 20px;
+    color: black;
+}
+
+.service-box ul li {
+    margin-bottom: 6px;
+}
+
+/* WHY CHOOSE */
+.why {
+    margin-top: 60px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 165, 74, 0.08);
+}
+
+.why ul {
+    max-width: 700px;
+    margin: auto;
+    line-height: 2;
+    font-size: 18px;
+    color: black;
+    list-style: none;
+    padding: 0;
+}
+
+.why ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(212, 165, 74, 0.05);
+}
+
+/* CLIENTS */
+.clients {
+    margin-top: 60px;
+}
+
+.clients-marquee {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 18px 0;
+    margin-top: 25px;
+    border: 1px solid rgba(212, 165, 74, 0.08);
+}
+
+.clients-track {
+    display: flex;
+    width: max-content;
+    animation: scrollClients 35s linear infinite;
+}
+
+.clients-track span {
+    white-space: nowrap;
+    padding: 12px 25px;
+    margin-right: 15px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 30px;
+    font-weight: bold;
+    color: black;
+    border: 1px solid rgba(212, 165, 74, 0.08);
+}
+
+@keyframes scrollClients {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* CTA */
+.cta {
+    margin-top: 60px;
+    text-align: center;
+    background: rgba(153, 101, 21, 0.9);
+    color: white;
+    padding: 45px 20px;
+    border-radius: 12px;
+}
+
+.cta h3 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.cta a {
+    display: inline-block;
+    margin-top: 15px;
+    background: #25D366;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta a:hover {
+    background: #1ebd5a;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 45px;
+    background: rgba(34, 34, 34, 0.92);
+    text-align: center;
+    padding: 18px;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    right: 20px;
+    bottom: 20px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+    z-index: 1000;
+}
+
+.whatsapp-float:hover {
+    background: #1ebd5a;
+}
+
+/* MOBILE */
+@media(max-width:768px) {
+    header {
+        padding: 14px 20px;
+    }
+
+    /* .logo-link img {
+        width: 44px;
+        height: 44px;
+    } */
+
+    header h1 {
+        font-size: clamp(1rem, 2.8vw, 1.4rem);
+        white-space: normal;
+    }
+
+    .brand-text {
+        position: relative;
+        left: 0;
+        transform: none;
+        flex: 1;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    nav a {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .why {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    
+    <a href="index.html" class="logo-link">
+        <img src="images/big Panther.png" alt="Panther Empire Logo">
+    </a>
+    <div class="brand-text">
+        <h1>Panther Empire Limited</h1>
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="content">
+
+    <h2 class="section-title">Our Services</h2>
+
+    <p class="intro">
+        Panther Empire Limited delivers quality products, reliable sourcing, competitive pricing and timely delivery tailored to your operational needs. We offer a comprehensive range of contract logistics services.
+    </p>
+
+    <div class="services-container">
+
+        <div class="service-box">
+            <h3>🚚 Transportation</h3>
+            <p>Reliable and timely delivery of goods across Kenya with professional logistics coordination.</p>
+            <ul>
+                <li>Inland & Transit Transport</li>
+                <li>Project Logistics</li>
+                <li>Processing of abnormal cargo permits</li>
+                <li>Cargo tracking and escorting</li>
+            </ul>
+        </div>
+
+        <div class="service-box">
+            <h3>🏬 Warehousing</h3>
+            <p>Secure storage facilities with efficient inventory handling for businesses of all sizes.</p>
+            <ul>
+                <li>Palletized storage</li>
+                <li>Shelving and binning</li>
+                <li>Customized storage solutions</li>
+                <li>Facilities in Nairobi and Mombasa</li>
+            </ul>
+        </div>
+
+        <div class="service-box">
+            <h3>📦 Supply Chain</h3>
+            <p>End-to-end procurement, sourcing and supply chain optimization tailored to your needs.</p>
+            <ul>
+                <li>4PL services</li>
+                <li>Inventory management</li>
+                <li>Last mile delivery</li>
+                <li>Value added services</li>
+            </ul>
+        </div>
+
+        <div class="service-box">
+            <h3>🛒 Product Supplies</h3>
+            <p>Purchase and delivery of a wide range of products to support our clients' operations.</p>
+            <ul>
+                <li>Raw materials</li>
+                <li>Tools and equipment</li>
+                <li>PPEs (Personal Protective Equipment)</li>
+                <li>General supplies</li>
+            </ul>
+        </div>
+
+        <div class="service-box">
+            <h3>📊 Logistics Consulting</h3>
+            <p>Free consulting to our clients regarding a variety of Logistics, Transport, and Distribution processes and procedures.</p>
+            <ul>
+                <li>Supply chain optimization</li>
+                <li>Process improvement</li>
+                <li>Best practices implementation</li>
+            </ul>
+        </div>
+
+        <div class="service-box">
+            <h3>🚛 Distribution</h3>
+            <p>Value added activities in the warehouse and open stock yard provide customers with the ability to change, enhance and consolidate product.</p>
+            <ul>
+                <li>FTL and part load shipments</li>
+                <li>Owned fleet and network of partners</li>
+                <li>Extensive tracking system</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- WHY CHOOSE -->
+    <div class="why">
+        <h2 class="section-title" style="margin-top:0;">Why Choose Panther Empire?</h2>
+        <ul>
+            <li>✔ 25+ years combined industry experience</li>
+            <li>✔ Reliable sourcing solutions</li>
+            <li>✔ Competitive pricing</li>
+            <li>✔ Timely delivery</li>
+            <li>✔ High quality products</li>
+            <li>✔ Local & international procurement</li>
+            <li>✔ Safety-first policy</li>
+            <li>✔ Modern technology with car tracking system</li>
+        </ul>
+    </div>
+
+    <!-- CLIENTS -->
+    <div class="clients">
+        <h2 class="section-title">Trusted Clients & Partners</h2>
+        <div class="clients-marquee">
+            <div class="clients-track">
+                <span>Midax Petrol Station</span>
+                <span>Regional Logistics Center</span>
+                <span>Dominion Allied Services</span>
+                <span>Agility Logistics</span>
+                <span>Alliad Logistics</span>
+                <span>Highlands Water</span>
+                <span>Jelani Venture</span>
+                <span>Antoreg Insurance Agency</span>
+                <span>eManage Africa Ltd</span>
+                <span>AGS Worldwide Movers</span>
+                <span>Techo Quality Inspectors</span>
+                <span>JIL Safety</span>
+                <span>SafePort LTD</span>
+                <span>White Pigeon Labour Contractors</span>
+                <span>KAPU AFRICA LTD</span>
+                <span>SOKOWATCH KENYA LTD</span>
+                <span>ARAMEX</span>
+                <span>DHL KENYA LTD</span>
+                <span>KYOSK DIGITAL SERVICES</span>
+                <!-- Duplicate for smooth loop -->
+                <span>Midax Petrol Station</span>
+                <span>Regional Logistics Center</span>
+                <span>Dominion Allied Services</span>
+                <span>Agility Logistics</span>
+                <span>Alliad Logistics</span>
+                <span>Highlands Water</span>
+                <span>Jelani Venture</span>
+                <span>Antoreg Insurance Agency</span>
+                <span>eManage Africa Ltd</span>
+                <span>AGS Worldwide Movers</span>
+                <span>Techo Quality Inspectors</span>
+                <span>JIL Safety</span>
+                <span>SafePort LTD</span>
+                <span>White Pigeon Labour Contractors</span>
+                <span>KAPU AFRICA LTD</span>
+                <span>SOKOWATCH KENYA LTD</span>
+                <span>ARAMEX</span>
+                <span>DHL KENYA LTD</span>
+                <span>KYOSK DIGITAL SERVICES</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h3>Need Reliable Supply Solutions?</h3>
+        <p>Talk to Panther Empire today for fast, affordable and trusted sourcing.</p>
+        <a href="https://wa.me/254700377132">Chat on WhatsApp</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Panther Empire. All Rights Reserved.</p>
+    <p>Email: <a href="mailto:info@pantherempire.co.ke">info@pantherempire.co.ke</a></p>
+</footer>
+
+<a href="https://wa.me/254700377132" class="whatsapp-float">💬</a>
+
+</body>
+</html>

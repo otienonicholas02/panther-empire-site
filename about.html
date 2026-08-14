@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panther Empire - About Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* CONTENT */
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3rem;
+            flex: 1;
+            width: 100%;
+        }
+
+        .content h2 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(212, 165, 74, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .content h3 {
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content p {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .content ul {
+            padding-left: 25px;
+            margin: 0.5rem 0 1.5rem;
+        }
+
+        .content ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.04);
+            border-left: 4px solid #996515;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0.3rem;
+        }
+
+        .highlight-box em {
+            font-size: 1.2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(212, 165, 74, 0.1);
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .stat p {
+            font-size: 0.95rem;
+            margin: 0.3rem 0 0;
+        }
+
+        .industries-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 15px 0 20px;
+        }
+
+        .industries-tags span {
+            background: rgba(153, 101, 21, 0.2);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(212, 165, 74, 0.15);
+        }
+
+        /* TEAM SECTION */
+        .team {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            background: #d4a54a;
+            padding: 1.8rem 2.5rem 1.8rem 2rem;
+            border-radius: 40px;
+            /* box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7); */
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .team-member .member-img {
+            flex-shrink: 0;
+            width: 180px;
+            height: 180px;
+            border-radius: 50% !important;
+            overflow: hidden;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team-member .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: #ffffff;
+        }
+
+        .team-member .member-img img[src*="tony.png"],
+        .team-member .member-img img[src*="clemo.png"] {
+            background: #ffffff;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .team-member .member-info {
+            flex: 1;
+            text-align: left;
+            min-width: 200px;
+        }
+
+        .team-member .member-info h3 {
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: whitesmoke;
+            margin: 0 0 0.3rem 0;
+            letter-spacing: 1px;
+        }
+
+        .team-member .member-info p {
+            font-size: 1rem;
+            color: whitesmoke;
+            line-height: 1.6;
+            margin: 0;
+            max-width: 500px;
+        }
+
+        /* FOOTER */
+        footer {
+    margin-top: 45px;
+    background: rgba(34, 34, 34, 0.92);
+    text-align: center;
+    padding: 18px;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            header {
+                padding: 14px 20px;
+            }
+
+            /* .logo-link img {
+                width: 44px;
+                height: 44px;
+            } */
+
+            header h1 {
+                font-size: clamp(1rem, 2.8vw, 1.4rem);
+                white-space: normal;
+            }
+
+            .brand-text {
+                position: relative;
+                left: 0;
+                transform: none;
+                flex: 1;
+                text-align: center;
+            }
+
+            .team-member {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.8rem 1.2rem;
+                gap: 1.2rem;
+            }
+
+            .team-member .member-info {
+                text-align: center;
+            }
+
+            .team-member .member-info p {
+                max-width: 100%;
+            }
+
+            .team-member .member-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            nav a {
+                padding: 14px;
+                font-size: 16px;
+            }
+
+            .content {
+                padding: 1.5rem 1rem;
+            }
+
+            .content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .team-member .member-img {
+                width: 120px;
+                height: 120px;
+            }
+            .content h2 {
+                font-size: 1.6rem;
+            }
+            nav a {
+                padding: 10px 14px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+<header>
+    
+    <a href="index.html" class="logo-link">
+        <img src="images/big Panther.png" alt="Panther Empire Logo">
+    </a>
+    <div class="brand-text">
+        <h1>Panther Empire Limited</h1>
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+        <!-- INTRODUCTION -->
+        <h2>Introduction</h2>
+        <p>
+            The transportation and logistics industry is ever changing and is becoming even more sophisticated every year. Panther Empire Limited (PEL) is a third party logistics provider company that operates primarily within Kenya with services spanning across East Africa.
+        </p>
+        <p>
+            In order to best fulfill your needs, we offer services in contract logistics namely, Logistics, Transportation, Warehousing & Distribution and Product Supplies.
+        </p>
+        <p>
+            At PEL we are determined to continuously improve our service delivery methods and policies with the objective of exceeding client expectations and at the same time staying ahead of the competition.
+        </p>
+
+        <!-- ABOUT US -->
+        <h2>About Us</h2>
+        <ul>
+            <li>Privately owned company that provides top-notch Contract Logistics and Product Supplies</li>
+            <li>Headquartered in Nairobi, Kenya</li>
+            <li>Operations team with <strong>25+ years</strong> combined industry experience</li>
+            <li>We offer free consulting to our clients regarding a variety of Logistics, Transport, Distribution processes and procedures</li>
+            <li>We offer Warehousing services and Product Supplies through our partners, making us a one-stop logistics solution provider</li>
+        </ul>
+
+        <!-- STATS -->
+        <div class="stats-grid">
+            <div class="stat">
+                <h3>25+</h3>
+                <p>Years Combined Experience</p>
+            </div>
+            <div class="stat">
+                <h3>2</h3>
+                <p>Locations (Nairobi & Mombasa)</p>
+            </div>
+            <div class="stat">
+                <h3>8+</h3>
+                <p>Industries Served</p>
+            </div>
+        </div>
+
+        <!-- MISSION & VISION -->
+        <h2>Our Mission</h2>
+        <div class="highlight-box">
+            <p><em>"To advance the world's supply chains."</em></p>
+        </div>
+        <p>
+            The word "advance" is critical to our Mission statement. Whether a customer is beginning their journey in supply chain excellence or whether they are mature in their work, we will help them advance to the next level in their supply chain maturity and performance.
+        </p>
+
+        <h2>Our Vision</h2>
+        <div class="highlight-box">
+            <p><em>"To be the recognized leader in end to end supply chain solutions."</em></p>
+        </div>
+        <p>
+            We continuously develop progressive supply chain strategies for the changing world. We build credibility as the recognized leader by developing, publishing and speaking on new innovative supply chain strategies. Most importantly, we are the recognized leader by successfully supporting our customers to implement innovative strategies and to realize real measured business results.
+        </p>
+
+        <!-- INDUSTRIES SERVED -->
+        <h2>Industries We Serve</h2>
+        <div class="industries-tags">
+            <span>🌾 Agriculture</span>
+            <span>🏭 Manufacturing</span>
+            <span>📦 Import Cargo</span>
+            <span>🏗️ Construction</span>
+            <span>🚗 Automotive</span>
+            <span>💊 Pharmaceuticals</span>
+            <span>💻 ICT</span>
+            <span>💰 Private Equities</span>
+        </div>
+
+        <!-- VALUE ADD -->
+        <h2>Our Value Add</h2>
+
+        <h3>🤝 Committed to Partnership</h3>
+        <p>
+            We're not driven by quarterly numbers; we're driven by doing what is best for our customers in the long run. We're privately held and our owners are actively engaged in your success, so we can make decisions quickly and timely. Our partnerships range from small startup businesses to multi-decade relationships with companies within different industries.
+        </p>
+
+        <h3>🔄 Unmatched Flexibility</h3>
+        <p>
+            Our flexibility provides our clients with options to accommodate any and every logistics and distributions needs.
+        </p>
+
+        <h3>💰 Pricing</h3>
+        <p>
+            Panther Empire can deliver cost-effective supply chain solutions catered to your particular needs. It's what we do. And we do it well across diverse industries.
+        </p>
+
+        <!-- LEADERSHIP TEAM -->
+        <h2>Our Leadership</h2>
+
+        <div class="team">
+            <!-- Tony -->
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="images/tony.png" alt="Tony - CEO">
+                </div>
+                <div class="member-info">
+                    <h3>Tony — CEO</h3>
+                    <p>Tony is a visionary leader with years of experience in logistics and transportation, driving Panther Empire towards excellence.</p>
+                </div>
+            </div>
+
+            <!-- Clemo -->
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="images/clemo.png" alt="Clemo - Co-Founder">
+                </div>
+                <div class="member-info">
+                    <h3>Clemo — Co-Founder</h3>
+                    <p>Clemo has played a crucial role in shaping the company's logistics strategies, ensuring seamless operations across Kenya.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+    <p>&copy; 2026 Panther Empire. All Rights Reserved.</p>
+    <p>Email: <a href="mailto:info@pantherempire.co.ke">info@pantherempire.co.ke</a></p>
+</footer>f
+
+    <script>
+        (function() {
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.textContent.trim() === 'About Us') {
+                    link.classList.add('active');
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>f

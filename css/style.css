@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(120deg, whitesmoke, #e0e0e0 60%, #d8d8d8);
+    color: black;
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 18px 40px;
+    gap: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* LOGO */
+.logo-link {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.06);
+    filter: brightness(1.1);
+}
+
+.logo-link img {
+    width: 260px;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+}
+
+/* TEXT */
+.brand-text {
+    position: static;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+    text-align: left;
+}
+
+header h1 {
+    margin: 0;
+    text-align: left;
+    font-size: clamp(1.3rem, 3.6vw, 2rem);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: black;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    margin-left: auto;         
+    background: transparent;   
+    gap: 10px;                  
+}
+
+nav a {
+    color: black; 
+    text-decoration: none; 
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 15px; 
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #996515; 
+    color: white;        
+}
+
+/* MOBILE RESPONSIVENESS FOR HEADER */
+@media(max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 14px 20px;
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .logo-link img {
+        width: 180px;
+        height: auto;
+    }
+
+    header h1 {
+        font-size: clamp(1rem, 2.8vw, 1.4rem);
+        white-space: normal;
+    }
+
+    .brand-text {
+        position: relative;
+        left: 0;
+        transform: none;
+        flex: 1;
+        text-align: center;
+    }
+}
+
+@media(max-width:480px) {
+    header {
+        flex-direction: column;
+        padding: 12px 16px;
+        gap: 10px;
+    }
+
+    .logo-link img {
+        width: 140px;
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 16px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}

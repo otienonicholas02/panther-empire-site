@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panther Empire - Home</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(120deg, whitesmoke, #e0e0e0 60%, #d8d8d8);
+    color: black;
+    position: relative;
+    z-index: 1000; /* Increased z-index so it stays above video */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Keeps logo on the left */
+    padding: 18px 40px;
+    gap: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Added a subtle shadow */
+}
+
+/* LOGO */
+.logo-link {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.06);
+    filter: brightness(1.1);
+}
+
+.logo-link img {
+    width: 260px;
+    height: 130px;
+    object-fit: contain;
+    display: block;
+}
+
+/* TEXT */
+.brand-text {
+    position: static;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+    text-align: left;
+}
+
+header h1 {
+    margin: 0;
+    text-align: left;
+    font-size: clamp(1.3rem, 3.6vw, 2rem);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: black;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    margin-left: auto;         
+    background: transparent;   
+    gap: 10px;                  
+}
+
+nav a {
+    color: black; 
+    text-decoration: bold;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 15px; 
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: #996515; 
+    color: white;        
+}
+
+/* VIDEO BACKGROUND */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* DARK OVERLAY */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: -1;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 90px 20px 60px;
+}
+
+.hero h2 {
+    font-size: 52px;
+    margin-bottom: 18px;
+    color: #e8c97a;
+}
+
+.hero p {
+    max-width: 900px;
+    margin: auto;
+    font-size: 21px;
+    line-height: 1.7;
+    color: #d4b87a;
+}
+
+/* MAIN CONTENT */
+.content {
+    max-width: 1300px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* SERVICE CARDS */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.92);
+    color: #333;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    color: #996515;
+    margin-bottom: 12px;
+    font-size: 26px;
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+/* CTA */
+.cta {
+    margin-top: 55px;
+    text-align: center;
+    background: rgba(153, 101, 21, 0.92);
+    padding: 45px 20px;
+    border-radius: 12px;
+}
+
+.cta h3 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.cta a {
+    display: inline-block;
+    margin-top: 18px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.cta a:hover {
+    background: #1ebd5a;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 45px;
+    background: rgba(34, 34, 34, 0.92);
+    text-align: center;
+    padding: 18px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+/* MOBILE */
+@media(max-width:768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 14px 20px;
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;       /* Nav takes full width on mobile */
+        justify-content: center;
+        margin-left: 0;    /* Reset the right push */
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .logo-link img {
+        width: 180px;      /* Smaller logo on tablet */
+        height: auto;
+    }
+
+    header h1 {
+        font-size: clamp(1rem, 2.8vw, 1.4rem);
+        white-space: normal;
+    }
+
+    .brand-text {
+        position: relative;
+        left: 0;
+        transform: none;
+        flex: 1;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+}
+
+@media(max-width:480px) {
+    header {
+        flex-direction: column;
+        padding: 12px 16px;
+        gap: 10px;
+    }
+
+    /* .logo-link img {
+        width: 140px;
+        height: auto;
+    } */
+
+    header h1 {
+        font-size: 16px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- VIDEO BACKGROUND -->
+<video autoplay loop muted playsinline class="video-background">
+    <source src="video/panther.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<!-- HEADER -->
+<header>
+    <!-- Left: Logo & Text -->
+    <a href="index.html" class="logo-link">
+        <img src="images/big Panther.png" alt="Panther Empire Logo">
+    </a>
+    <div class="brand-text">
+        <h1>Panther Empire Limited</h1>
+    </div>
+
+    <!-- Right: Navigation (Moved inside header) -->
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Leading Logistics & Supply Solutions in Kenya</h2>
+    <p>
+        Panther Empire Limited (PEL) is a third party logistics provider company that operates primarily within Kenya with services spanning across East Africa. We deliver reliable transportation, sourcing, procurement and supply chain solutions for commercial, industrial and agricultural sectors across Kenya.
+    </p>
+</section>
+
+<div class="content">
+
+    <div class="services-grid">
+        <div class="card">
+            <h3>🚚 Transportation</h3>
+            <p>
+                Reliable and timely delivery of goods across Kenya with professional logistics coordination.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🏬 Warehousing</h3>
+            <p>
+                Secure storage facilities with efficient inventory handling for businesses of all sizes.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📦 Supply Chain</h3>
+            <p>
+                End-to-end procurement, sourcing and supply chain optimization tailored to your needs.
+            </p>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h3>Need Fast & Trusted Logistics Support?</h3>
+        <p>Talk to Panther Empire today for dependable business solutions.</p>
+        <a href="https://wa.me/254700377132">Chat on WhatsApp</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Panther Empire. All Rights Reserved.</p>
+    <p>Email: <a href="mailto:info@pantherempire.co.ke">info@pantherempire.co.ke</a></p>
+</footer>
+
+<a href="https://wa.me/254700377132" class="whatsapp-float">💬</a>
+
+</body>
+</html>
