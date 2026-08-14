@@ -40,8 +40,8 @@ header {
 }
 
 .logo-link img {
-    width: 260px;
-    height: 160px;
+    width: 300px;
+    height: 200px;
     object-fit: contain;
     display: block;
 }
