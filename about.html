@@ -284,7 +284,7 @@ footer a {
     </div>
 
     <nav>
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
@@ -416,14 +416,25 @@ footer a {
 </footer>
 
     <script>
-        (function() {
-            document.querySelectorAll('nav a').forEach(link => {
-                if (link.textContent.trim() === 'About Us') {
-                    link.classList.add('active');
-                }
-            });
-        })();
-    </script>
+    // Get the current page's filename (e.g., 'services.html')
+    const currentPage = window.location.pathname.split('/').pop();
+
+    // Select all the links inside the nav
+    const navLinks = document.querySelectorAll('nav a');
+
+    // Loop through each link
+    navLinks.forEach(link => {
+        // Get the href from the link
+        const linkPage = link.getAttribute('href');
+
+        // If the link's href matches the current page, add the 'active' class
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        }
+    });
+</script>
+
+<script src="javascript/navactive.js"></script>
 
 </body>
 </html>
