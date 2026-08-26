@@ -13,7 +13,7 @@ body {
 
 /* HEADER */
 header {
-    background: #3a3a3a;
+    background: #000000;
     color: white;
     position: relative;
     z-index: 1000;
@@ -26,25 +26,52 @@ header {
 }
 
 /* LOGO */
+/* LOGO */
 .logo-link {
     flex: 0 0 auto;
+
     display: flex;
     align-items: center;
+
     text-decoration: none;
-    transition: transform 0.2s ease, filter 0.2s ease;
+
+    transition: transform 0.3s ease;
 }
 
 .logo-link:hover {
-    transform: scale(1.06);
-    filter: brightness(1.1);
+    transform: scale(1.03);
 }
 
 .logo-link img {
-    width: 300px;
-    height: 200px;
+    width: 270px;
+    height: 100px;
+
     object-fit: contain;
     display: block;
-    filter: brightness(1.8);
+
+    /*
+       Keep the original logo appearance,
+       but make it brighter on the black header.
+    */
+    filter:
+        brightness(1.35)
+        contrast(1.15)
+
+        /* subtle gold glow */
+        drop-shadow(0 0 3px rgba(212, 175, 90, 0.8))
+        drop-shadow(0 0 7px rgba(212, 175, 90, 0.45));
+
+    transition: filter 0.3s ease;
+}
+
+.logo-link:hover img {
+    filter:
+        brightness(1.45)
+        contrast(1.2)
+
+        drop-shadow(0 0 4px rgba(212, 175, 90, 0.9))
+        drop-shadow(0 0 10px rgba(212, 175, 90, 0.55))
+        drop-shadow(0 0 16px rgba(212, 175, 90, 0.25));
 }
 
 /* TEXT */

@@ -21,91 +21,6 @@ body {
     position: relative;
 }
 
-/* HEADER */
-header {
-    background: #3a3a3a;
-    color: white;
-    position: relative;
-    z-index: 1000; 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; 
-    padding: 18px 40px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-}
-
-/* LOGO */
-.logo-link {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.logo-link:hover {
-    transform: scale(1.06);
-    filter: brightness(1.1);
-}
-
-.logo-link img {
-    width: 260px;
-    height: 130px;
-    object-fit: contain;
-    display: block;
-    filter: brightness(1.8);
-}
-
-/* TEXT */
-.brand-text {
-    color: white;
-    position: static;
-    transform: none;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.15;
-    text-align: left;
-}
-
-.brand-text h1 {
-    color: white;
-}
-
-header h1 {
-    color:white;
-    margin: 0;
-    text-align: left;
-    font-size: clamp(1.3rem, 3.6vw, 2rem);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    color: black;
-}
-
-/* NAVBAR */
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; 
-    margin-left: auto;         
-    background: transparent;   
-    gap: 10px;                  
-}
-
-nav a {
-    color: #f5f5f5;
-    text-decoration: bold;
-    padding: 10px 20px;
-    font-size: 20px;
-    font-weight: 800;
-    border-radius: 15px; 
-    transition: 0.3s;
-}
-
-nav a:hover{
-    background: #996515; 
-    color: white;        
-}
 
 /* VIDEO BACKGROUND */
 .video-background {
@@ -331,23 +246,24 @@ footer a {
 
 <!-- HEADER -->
 <header>
-    <!-- Left: Logo & Text -->
-    <a href="index.html" class="logo-link">
-        <img src="images/big Panther.png" alt="Panther Empire Logo">
-    </a>
-    <div class="brand-text">
-        <h1>Panther Empire Limited</h1>
+    <div class="header-container">
+
+        <!-- LOGO -->
+        <a href="index.html" class="logo-link">
+            <img src="images/big Panther.png" alt="Panther Empire Logo">
+        </a>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="quote-btn">Get a Quote</a>
+        </nav>
+
     </div>
-
-    <!-- Right: Navigation (Moved inside header) -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-    </nav>
 </header>
-
 <section class="hero">
     <h2>Leading Logistics & Supply Solutions in Kenya</h2>
     <p>
