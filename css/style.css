@@ -13,7 +13,7 @@ body {
 
 /* HEADER */
 header {
-    background: linear-gradient(120deg, whitesmoke, #e0e0e0 60%, #d8d8d8);
+    background: linear-gradient(120deg, rgb(192, 184, 184), #e0e0e0 60%, #d8d8d8);
     color: black;
     position: relative;
     z-index: 1000;
