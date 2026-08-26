@@ -23,8 +23,8 @@ body {
 
 /* HEADER */
 header {
-    background: linear-gradient(120deg, rgb(92, 91, 91), #817e7e 60%, #808080);
-    color: black;
+    background: #3a3a3a;
+    color: white;
     position: relative;
     z-index: 1000; 
     display: flex;
@@ -53,10 +53,12 @@ header {
     height: 130px;
     object-fit: contain;
     display: block;
+    filter: brightness(1.8);
 }
 
 /* TEXT */
 .brand-text {
+    color: white;
     position: static;
     transform: none;
     display: flex;
@@ -65,7 +67,12 @@ header {
     text-align: left;
 }
 
+.brand-text h1 {
+    color: white;
+}
+
 header h1 {
+    color:white;
     margin: 0;
     text-align: left;
     font-size: clamp(1.3rem, 3.6vw, 2rem);
@@ -86,7 +93,7 @@ nav {
 }
 
 nav a {
-    color: black; 
+    color: #f5f5f5;
     text-decoration: bold;
     padding: 10px 20px;
     font-size: 20px;
