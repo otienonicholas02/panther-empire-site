@@ -77,17 +77,8 @@ body {
     width: 100%;
     margin: 0;
 
-    /* Dark shade behind the wording */
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.90) 0%,
-        rgba(0, 0, 0, 0.75) 35%,
-        rgba(0, 0, 0, 0.35) 60%,
-        rgba(0, 0, 0, 0.05) 80%,
-        transparent 100%
-    );
-
     z-index:1;
+    background: transparent;
 }
 
 /* SMALL GOLD INTRO TEXT */
@@ -101,6 +92,42 @@ body {
     letter-spacing: 2px;
 
     margin-bottom: 18px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 70%;
+    height: 120%;
+
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.55) 35%,
+        rgba(0, 0, 0, 0.25) 65%,
+        transparent 100%
+    );
+
+    z-index: -1;
+
+    /* Makes the bottom fade naturally */
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 65%,
+        transparent 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 65%,
+        transparent 100%
+    );
 }
 
 .hero h2,
