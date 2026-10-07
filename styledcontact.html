@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Panther Empire Limited</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* HERO */
+        .page-hero {
+            background: linear-gradient(135deg, #996515 0%, #6b4409 100%);
+            color: white;
+            padding: 70px 20px 60px;
+            text-align: center;
+        }
+
+        .page-hero h2 {
+            font-size: 2.4rem;
+            margin: 0 0 12px;
+            font-weight: 700;
+        }
+
+        .page-hero p {
+            font-size: 1.05rem;
+            opacity: 0.92;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-wrapper {
+            max-width: 1100px;
+            margin: -50px auto 60px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 30px;
+            position: relative;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 35px 30px;
+        }
+
+        .info-card h3 {
+            font-size: 1.35rem;
+            color: #996515;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+
+        .info-card .subtitle {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .info-item .icon {
+            width: 42px;
+            height: 42px;
+            background: #fdf5e6;
+            color: #996515;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .info-item .label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #999;
+            font-weight: 600;
+        }
+
+        .info-item .value {
+            font-size: 0.98rem;
+            color: #2d2d2d;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        .info-item .value a {
+            color: #996515;
+            text-decoration: none;
+        }
+
+        .info-item .value a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 25px 0;
+        }
+
+        /* WhatsApp button */
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            background: #1ebe5b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== FORM CARD ===== */
+        .form-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 35px 30px;
+        }
+
+        .form-card h3 {
+            font-size: 1.35rem;
+            color: #996515;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+
+        .form-card .subtitle {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+            font-size: 0.87rem;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background: #fafafa;
+            transition: all 0.25s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #996515;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(153, 101, 21, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #996515;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.3px;
+        }
+
+        .submit-btn:hover {
+            background: #7a4a10;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(153, 101, 21, 0.3);
+        }
+
+        /* ===== STATUS MESSAGE ===== */
+        #status-message p {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 0 0 20px;
+            font-weight: 500;
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 850px) {
+            header {
+                padding: 12px 20px;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                margin-top: -30px;
+            }
+
+            .page-hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .info-card,
+            .form-card {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-link">
+        <img src="images/big Panther.png" alt="Panther Empire Logo">
+    </a>
+    <div class="brand-text">
+        <h1>Panther Empire Limited</h1>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="styledcontact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="page-hero">
+    <h2>Get In Touch</h2>
+    <p>We're here to help with all your logistics and business inquiries. Reach out and let's talk.</p>
+</section>
+
+<!-- ===== CONTACT CONTENT ===== -->
+<div class="contact-wrapper">
+
+    <!-- LEFT: INFO CARD -->
+    <div class="info-card">
+        <h3>Contact Information</h3>
+        <p class="subtitle">We'd love to hear from you. Reach us through any of these channels.</p>
+
+        <div class="info-item">
+            <div class="icon">✉</div>
+            <div>
+                <div class="label">Email Us</div>
+                <div class="value">
+                    <a href="mailto:info@pantherempire.co.ke">info@pantherempire.co.ke</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="icon">📞</div>
+            <div>
+                <div class="label">Call Us</div>
+                <div class="value">
+                    <a href="tel:+254700377132">+254 700 377 132</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="icon">🕒</div>
+            <div>
+                <div class="label">Working Hours</div>
+                <div class="value">Mon – Sat: 8:00 AM – 6:00 PM</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <a href="https://wa.me/254700377132?text=Hello%20Panther%20Empire%2C%20I%20need%20assistance"
+           target="_blank" rel="noopener" class="whatsapp-btn">
+            💬 Chat with us on WhatsApp
+        </a>
+    </div>
+
+    <!-- RIGHT: FORM CARD -->
+    <div class="form-card">
+        <h3>Send Us a Message</h3>
+        <p class="subtitle">Fill in the form below and our team will respond within 24 hours.</p>
+
+        <div id="status-message"></div>
+
+        <form action="contact.php" method="post">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Panther Empire Limited. All Rights Reserved.</p>
+    <p>Email: <a href="mailto:info@pantherempire.co.ke">info@pantherempire.co.ke</a></p>
+</footer>
+
+<script>
+    // Status message from URL params
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get("status");
+    const statusBox = document.getElementById("status-message");
+
+    if (status === "success") {
+        statusBox.innerHTML =
+            "<p style='color:#0f7b3f; background:#e6f7ec; border-left:4px solid #0f7b3f;'>✅ Message sent successfully! We'll be in touch soon.</p>";
+    } else if (status === "error") {
+        statusBox.innerHTML =
+            "<p style='color:#b3261e; background:#fdecec; border-left:4px solid #b3261e;'>❌ Failed to send message. Please try again or contact us directly.</p>";
+    }
+</script>
+
+<script src="javascript/navactive.js"></script>
+
+</body>
+</html>

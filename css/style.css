@@ -126,6 +126,20 @@ nav a.active {
     color: white;        
 }
 
+/* FOOTER */
+footer {
+    margin-top: 45px;
+    background: rgba(34, 34, 34, 0.92);
+    text-align: center;
+    padding: 18px;
+    color:white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
 /* MOBILE RESPONSIVENESS FOR HEADER */
 @media(max-width: 768px) {
     header {
