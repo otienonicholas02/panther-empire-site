@@ -45,33 +45,28 @@ header {
 .logo-link img {
     width: 270px;
     height: 100px;
-
     object-fit: contain;
     display: block;
 
-    /*
-       Keep the original logo appearance,
-       but make it brighter on the black header.
-    */
     filter:
-        brightness(1.35)
-        contrast(1.15)
-
-        /* subtle gold glow */
-        drop-shadow(0 0 3px rgba(212, 175, 90, 0.8))
-        drop-shadow(0 0 7px rgba(212, 175, 90, 0.45));
+        drop-shadow(0 0 1px #d4af5a)
+        drop-shadow(0 0 1px #d4af5a)
+        drop-shadow(0 0 2px #d4af5a)
+        drop-shadow(0 0 4px rgba(212, 175, 90, 0.9))
+        drop-shadow(0 0 8px rgba(212, 175, 90, 0.65))
+        drop-shadow(0 0 14px rgba(212, 175, 90, 0.4));
 
     transition: filter 0.3s ease;
 }
 
 .logo-link:hover img {
     filter:
-        brightness(2.5)
-        contrast(1.2)
-
-        drop-shadow(0 0 4px rgba(212, 175, 90, 0.9))
-        drop-shadow(0 0 10px rgba(212, 175, 90, 0.55))
-        drop-shadow(0 0 16px rgba(212, 175, 90, 0.25));
+        drop-shadow(0 0 1px #e8c97a)
+        drop-shadow(0 0 1px #e8c97a)
+        drop-shadow(0 0 3px #e8c97a)
+        drop-shadow(0 0 6px rgba(212, 175, 90, 1))
+        drop-shadow(0 0 12px rgba(212, 175, 90, 0.75))
+        drop-shadow(0 0 20px rgba(212, 175, 90, 0.5));
 }
 
 /* TEXT */
@@ -125,20 +120,6 @@ nav a.active {
     background: #996515; 
     color: white;        
 }
-
-/* FOOTER
-footer {
-    margin-top: 45px;
-    background: rgba(34, 34, 34, 0.92);
-    text-align: center;
-    padding: 18px;
-    color:white;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-} */
 
 .site-footer {
     background: #14161a;
@@ -194,26 +175,24 @@ footer a {
     margin: -40px 0 -40px -90px;
 
     filter:
-        brightness(1.35)
-        contrast(1.15)
-
-        /* subtle gold glow */
-        drop-shadow(0 0 3px rgba(212, 175, 90, 0.8))
-        drop-shadow(0 0 7px rgba(212, 175, 90, 0.45));
+        drop-shadow(0 0 1px #d4af5a)
+        drop-shadow(0 0 1px #d4af5a)
+        drop-shadow(0 0 2px #d4af5a)
+        drop-shadow(0 0 4px rgba(212, 175, 90, 0.9))
+        drop-shadow(0 0 8px rgba(212, 175, 90, 0.65))
+        drop-shadow(0 0 14px rgba(212, 175, 90, 0.4));
 
     transition: filter 0.3s ease;
 }
 
 .footer-logo:hover {
     filter:
-        brightness(1.45)
-        contrast(1.2)
-
-        drop-shadow(0 0 4px rgba(212, 175, 90, 0.9))
-        drop-shadow(0 0 10px rgba(212, 175, 90, 0.55))
-        drop-shadow(0 0 16px rgba(212, 175, 90, 0.25));
-
-        transform: scale(1.03);
+        drop-shadow(0 0 1px #e8c97a)
+        drop-shadow(0 0 1px #e8c97a)
+        drop-shadow(0 0 3px #e8c97a)
+        drop-shadow(0 0 6px rgba(212, 175, 90, 1))
+        drop-shadow(0 0 12px rgba(212, 175, 90, 0.75))
+        drop-shadow(0 0 20px rgba(212, 175, 90, 0.5));
 }
 
 .footer-brand h3 {
