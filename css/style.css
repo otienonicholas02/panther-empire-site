@@ -13,7 +13,14 @@ body {
 
 /* HEADER */
 header {
-    background: #000000;
+    background: linear-gradient(
+        135deg, 
+        #c7a969 0%,   /* Darker gold */
+        #e8d5a7 30%,  /* Light champagne gold */
+        #ffffff 50%,  /* White highlight */
+        #e8d5a7 70%,  /* Light champagne gold */
+        #b89b5c 100%  /* Darker gold */
+    );
     color: white;
     position: relative;
     z-index: 1000;
@@ -54,13 +61,13 @@ header {
     margin-left: 25px; 
 
     /* The Gold Glow */
-    filter:
+    /* filter:
         drop-shadow(0 0 1px #d4af5a)
         drop-shadow(0 0 4px rgba(212, 175, 90, 0.9))
-        drop-shadow(0 0 8px rgba(212, 175, 90, 0.65));
+        drop-shadow(0 0 8px rgba(212, 175, 90, 0.65)); */
 }
 
-.logo-link:hover img {
+/* .logo-link:hover img {
     filter:
         drop-shadow(0 0 1px #e8c97a)
         drop-shadow(0 0 1px #e8c97a)
@@ -68,7 +75,7 @@ header {
         drop-shadow(0 0 6px rgba(212, 175, 90, 1))
         drop-shadow(0 0 12px rgba(212, 175, 90, 0.75))
         drop-shadow(0 0 20px rgba(212, 175, 90, 0.5));
-}
+} */
 
 /* TEXT */
 .brand-text {
@@ -89,7 +96,7 @@ header {
 }
 
 header h1 {
-    color:white;
+    color: white;
     margin: 0;
     text-align: left;
     font-size: clamp(1.3rem, 3.6vw, 2rem);
@@ -121,7 +128,7 @@ nav a {
 
 nav a:hover, 
 nav a.active {
-    background: #996515; 
+    background: black; 
     color: white;        
 }
 
