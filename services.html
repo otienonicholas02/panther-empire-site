@@ -51,37 +51,59 @@ body {
 }
 
 .service-box {
-    background: rgba(255, 255, 255, 0.06);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid rgba(212, 165, 74, 0.1);
+    background: #ffffff; /* Solid white */
+    padding: 35px; /* Matches the contact page spacing */
+    border-radius: 12px; /* Matches the rounded corners */
+    border: 1px solid #eaeaea; /* Very faint border like the contact page */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04); /* Very soft shadow */
     transition: 0.3s;
+    
+    /* ✅ THIS IS THE MAGIC FIX FOR THE STAGGERED LAYOUT */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Makes all boxes in a row the same height */
 }
 
 .service-box:hover {
-    transform: translateY(-8px);
-    border-color: #996515;
-    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    border-color: #d4af5a; /* Optional: slight gold border on hover */
 }
 
 .service-box h3 {
-    color: rgba(120, 79, 16, 0.95);
-    margin-bottom: 12px;
-    font-size: 26px;
+    color: #996515; 
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 700;
 }
 
+/* Paragraph text */
 .service-box p {
-    color: black;
-    margin-bottom: 10px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .service-box ul {
-    padding-left: 20px;
-    color: black;
+    padding-left: 0;
+    color: #666;
+    list-style: none;
+    margin-top: auto;
 }
 
 .service-box ul li {
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-box ul li::before {
+    content: "•";
+    color: #d4af5a;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 /* WHY CHOOSE */
